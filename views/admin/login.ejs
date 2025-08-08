@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập Admin</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; }
+        form { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input { display: block; margin-bottom: 1rem; padding: 0.5rem; width: 250px; }
+        button { padding: 0.5rem 1rem; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <form action="/admin/login" method="POST">
+        <h2>Đăng nhập trang Quản trị</h2>
+        <% if (typeof error !== 'undefined' && error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Đăng nhập</button>
+    </form>
+</body>
+</html>
