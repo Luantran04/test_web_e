@@ -34,7 +34,7 @@ app.use(session({
 
 
 // --- ROUTES ---
-const adminRoutes = require('./routes/admin.routes.js');
+const adminRoutes = require('../routes/admin.routes.js');
 app.use('/admin', adminRoutes);
 
 // Route gốc để kiểm tra server có hoạt động không
